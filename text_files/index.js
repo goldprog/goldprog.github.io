@@ -59,7 +59,7 @@ $(function() {
     var timer = setInterval(function() {
         var end = getEnd(video[0]);
         var duration = video[0].duration * .5;
-
+        console.log(end+';;;;;'+duration)
         if (end < duration) {
             console.log(end + "---------------" + duration);
             progressHandler();
