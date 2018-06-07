@@ -34,13 +34,8 @@ $(function() {
     addSourceToVideo(video[0], "http://shared.youdao.com/market/xijing/img/v0.mp4", "video/mp4");
 
     function getEnd(video) {
-        var end = 0;
-        try {
-            console.log(video[0].buffered.end(0))
-            end = video[0].buffered.end(0) || 0;
-            end = parseInt(end * 1000 + 1) / 1000;
-        } catch (e) {}
-        return end;
+       var end = video.buffered.length > 0 ? video.buffered.end(0) : 0;
+       return end = parseInt(1000 * end + 1) / 1000;
     }
 
     function addSourceToVideo(element, src, type) {
@@ -62,7 +57,7 @@ $(function() {
         }
     }
     var timer = setInterval(function() {
-        var end = getEnd(video);
+        var end = getEnd(video[0]);
         var duration = video[0].duration * .5;
 
         if (end < duration) {
