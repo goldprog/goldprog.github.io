@@ -74,35 +74,31 @@ $(function(){
       loadon();
     }
 
-   //  if (navigator.userAgent.indexOf("MiuiBrowser")) {
-   //    loadVideo();
-   //    video.addClass('miui');
-   //  }else {
-   //    var req= new XMLHttpRequest();
-   //    req.open("GET", videoSrc, true);
-   //    req.responseType = "blob";
-   //    req.onload = function() {
-   //      if (200 === this.status && "video/mp4" === this.response.type) {
-   //        var res = this.response,
-   //          url = (window.URL || window.webkitURL || window || {}).createObjectURL(res);
-   //          console.log(res);
-   //        hideEle(loading);
-   //        showEle(playBtn);
-   //        video[0].src = url;
-   //      } else {
-   //        loadVideo();
-   //      }
-   //    }
-   //    req.onerror = function(e) {
-   //      console.log(e);
-   //      loadVideo();
-   //    };
-   //    req.send()
-   // }
-   video[0].addEventListener("canplay", function() {
-     hideEle(loading);
-     showEle(playBtn);
-　　}, false);
+    if (navigator.userAgent.indexOf("MiuiBrowser")!==-1) {
+      loadVideo();
+      video.addClass('miui');
+    }else {
+      var req= new XMLHttpRequest();
+      req.open("GET", videoSrc, true);
+      req.responseType = "blob";
+      req.onload = function() {
+        if (200 === this.status && "video/mp4" === this.response.type) {
+          var res = this.response,
+            url = (window.URL || window.webkitURL || window || {}).createObjectURL(res);
+            console.log(res);
+          hideEle(loading);
+          showEle(playBtn);
+          video[0].src = url;
+        } else {
+          loadVideo();
+        }
+      }
+      req.onerror = function(e) {
+        console.log(e);
+        loadVideo();
+      };
+      req.send()
+   }
     playBtn.click(function(){
       hideEle($('.all'));
       //showEle(video);
