@@ -124,6 +124,7 @@ $(function(){
     playBtn.click(function(){
       hideEle($('.all'));
       showEle(video);
+      video[0].currentTime = 0;
       video[0].play();
     })
     replayBtn.click(function(){
