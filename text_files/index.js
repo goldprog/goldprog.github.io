@@ -99,7 +99,7 @@ $(function(){
    //    };
    //    req.send()
    // }
-   video[0].addEventListener("canplaythrough", function() {
+   video[0].addEventListener("canplay", function() {
      hideEle(loading);
      showEle(playBtn);
 　　}, false);
