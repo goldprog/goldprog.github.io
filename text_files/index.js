@@ -1,6 +1,6 @@
+var video = $("#video");
 $(function(){
-  var vConsole = new VConsole();
-  var video = $("#video"),
+  var vConsole = new VConsole(),
     loading = $("#loading"),
     content = $("#content"),
     playBtn = $("#play"),
@@ -28,6 +28,28 @@ $(function(){
       }
       el.hide()
     }
+
+
+
+    addSourceToVideo( video[0], "http://210.82.76.66:8081/IXCaa84ca17546a46fd0e146f9fc406e0e3_58.132.214.2/market/xijing/img/v0.mp4","video/mp4");
+
+    var timer = setInterval(function() {
+        var end = getEnd(video);
+        var duration = video[0].duration*.5;
+
+        if(end < duration) {
+            console.log(end+"---------------"+duration);
+            progressHandler();
+        }
+
+        if(end >= duration) {
+            clearInterval(timer);
+            hideEle(loading);
+            showEle(playBtn);
+        }
+
+    }, 500);
+
     //加载视频
     function loadVideo(){
 
@@ -74,34 +96,34 @@ $(function(){
       loadon();
     }
 
-    if (navigator.userAgent.indexOf("MiuiBrowser")!==-1) {
-      loadVideo();
-      video.addClass('miui');
-    }else {
-      var req= new XMLHttpRequest();
-      req.open("GET", videoSrc, true);
-      req.responseType = "blob";
-      req.onload = function() {
-        if (200 === this.status && "video/mp4" === this.response.type) {
-          var res = this.response,
-            url = (window.URL || window.webkitURL || window || {}).createObjectURL(res);
-            console.log(res);
-          hideEle(loading);
-          showEle(playBtn);
-          video[0].src = url;
-        } else {
-          loadVideo();
-        }
-      }
-      req.onerror = function(e) {
-        console.log(e);
-        loadVideo();
-      };
-      req.send()
-   }
+   //  if (navigator.userAgent.indexOf("MiuiBrowser")!==-1) {
+   //    //loadVideo();
+   //    video.addClass('miui');
+   //  }else {
+   //    var req= new XMLHttpRequest();
+   //    req.open("GET", videoSrc, true);
+   //    req.responseType = "blob";
+   //    req.onload = function() {
+   //      if (200 === this.status && "video/mp4" === this.response.type) {
+   //        var res = this.response,
+   //          url = (window.URL || window.webkitURL || window || {}).createObjectURL(res);
+   //          console.log(res);
+   //        hideEle(loading);
+   //        showEle(playBtn);
+   //        video[0].src = url;
+   //      } else {
+   //        loadVideo();
+   //      }
+   //    }
+   //    req.onerror = function(e) {
+   //      console.log(e);
+   //      loadVideo();
+   //    };
+   //    req.send()
+   // }
     playBtn.click(function(){
       hideEle($('.all'));
-      //showEle(video);
+      showEle(video);
       video[0].play();
     })
     replayBtn.click(function(){
@@ -110,14 +132,41 @@ $(function(){
       video[0].play();
     })
     video[0].addEventListener("timeupdate", function() {
-      if(!video[0].isPlayed && this.currentTime > .1){
-        showEle(video);
-        video[0].isPlayed = true;
-        console.log('我被执行了！');
-      }
+      // if(!video[0].isPlayed && this.currentTime > .1){
+      //   showEle(video);
+      //   video[0].isPlayed = true;
+      //   console.log('我被执行了！');
+      // }
     });
     video[0].addEventListener("ended", function() {
       hideEle(video);
       content.css('opacity',1)
     })
 })
+function getEnd(video) {
+  var end = 0;
+  try {
+    end = video[0].buffered.end(0) || 0;
+    end = parseInt(end * 1000 + 1) / 1000;
+  } catch (e) {
+  }
+  return end;
+}
+
+function addSourceToVideo(element, src, type) {
+  var source = document.createElement('source');
+  source.src = src;
+  source.type = type;
+  element.appendChild(source);
+}
+
+progressHandler = function(e) {
+  if( video[0].duration ) {
+    var percent = (video[0].buffered.end(0)/video[0].duration) * 100;
+    console.log(parseInt(percent)+"%");
+    if( percent >= 60 ) {
+      console.log("loaded!");
+    }
+    video[0].currentTime++;
+  }
+}
