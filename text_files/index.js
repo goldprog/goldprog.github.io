@@ -36,6 +36,7 @@ $(function() {
     function getEnd(video) {
         var end = 0;
         try {
+            console.log(video[0].buffered.end(0))
             end = video[0].buffered.end(0) || 0;
             end = parseInt(end * 1000 + 1) / 1000;
         } catch (e) {}
