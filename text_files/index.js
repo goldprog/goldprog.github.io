@@ -1,5 +1,5 @@
+var video = $("#video");
 $(function() {
-    var video = $("#video");
     var vConsole = new VConsole(),
         loading = $("#loading"),
         content = $("#content"),
@@ -43,9 +43,7 @@ $(function() {
         source.src = src;
         source.type = type;
         element.appendChild(source);
-        wx.ready(function() {
-          video[0].play();
-        });
+
     }
 
     progressHandler = function(e) {
@@ -61,7 +59,7 @@ $(function() {
     }
     var timer = setInterval(function() {
         var end = getEnd(video[0]);
-        var duration = video[0].duration * .5;
+        var duration = video[0].duration * 0.5;
         console.log(end+';;;;;'+duration)
         if(end < duration) {
             console.log(end+"---------------"+duration);
@@ -171,3 +169,7 @@ $(function() {
         content.css('opacity', 1)
     })
 })
+
+wx.ready(function() {
+  video[0].play();
+});
