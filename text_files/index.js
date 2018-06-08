@@ -58,8 +58,9 @@ $(function() {
     if (useragent.match(/mobile/i) !== null && useragent.match(/iphone/i) !== null && (h > w ? (Math.abs(w - 414) < 10 && h <= 736) : (Math.abs(w - 736) < 10) && h <= 414)) isP6p = true;
     return isP6p;
   })();
+  console.log(isPhone6p);
   if(isPhone6p){
-    video.css({"transform":"translate(-50%, -50%) scaleX(1.1)"})
+    video.css({"transform":"translate(-50%, -50%) scaleX(1.3)"})
   }
   //
   // progressHandler = function(e) {
