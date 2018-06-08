@@ -33,7 +33,7 @@ $(function() {
     clearInterval(timer2);
     hideEle(loading);
     showEle(playBtn);
-  }, 20000)
+  }, 10000)
 
 
   addSourceToVideo(video[0], "http://shared.youdao.com/market/xijing/img/v0.mp4", "video/mp4");
