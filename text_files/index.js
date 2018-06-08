@@ -29,15 +29,20 @@ $(function() {
         el.hide()
     }
 
+    var timer2 = setTimeout(function(){
+      clearInterval(timer2);
+      hideEle(loading);
+      showEle(playBtn);
+    },20000)
 
 
     addSourceToVideo(video[0], "http://shared.youdao.com/market/xijing/img/v0.mp4", "video/mp4");
-
-    function getEnd(video) {
-       var end = video.buffered.length > 0 ? video.buffered.end(0) : 0;
-       return end = parseInt(1000 * end + 1) / 1000;
-    }
-
+    //
+    // function getEnd(video) {
+    //    var end = video.buffered.length > 0 ? video.buffered.end(0) : 0;
+    //    return end = parseInt(1000 * end + 1) / 1000;
+    // }
+    //
     function addSourceToVideo(element, src, type) {
         var source = document.createElement('source');
         source.src = src;
@@ -45,34 +50,34 @@ $(function() {
         element.appendChild(source);
 
     }
-
-    progressHandler = function(e) {
-        if (video[0].duration) {
-            var percent = (video[0].buffered.end(0) / video[0].duration) * 100;
-            console.log(parseInt(percent) + "%");
-            if (percent >= 60) {
-                console.log("loaded!");
-            }
-            video[0].currentTime++;
-            console.log(video[0].currentTime)
-        }
-    }
-    var timer = setInterval(function() {
-        var end = getEnd(video[0]);
-        var duration = video[0].duration * 0.5;
-        console.log(end+';;;;;'+duration)
-        if(end < duration) {
-            console.log(end+"---------------"+duration);
-            progressHandler(video);
-        }
-
-        if (end >= duration) {
-            clearInterval(timer);
-            hideEle(loading);
-            showEle(playBtn);
-        }
-
-    }, 500);
+    //
+    // progressHandler = function(e) {
+    //     if (video[0].duration) {
+    //         var percent = (video[0].buffered.end(0) / video[0].duration) * 100;
+    //         console.log(parseInt(percent) + "%");
+    //         if (percent >= 60) {
+    //             console.log("loaded!");
+    //         }
+    //         video[0].currentTime++;
+    //         console.log(video[0].currentTime)
+    //     }
+    // }
+    // var timer = setInterval(function() {
+    //     var end = getEnd(video[0]);
+    //     var duration = video[0].duration * 0.5;
+    //     console.log(end+';;;;;'+duration)
+    //     if(end < duration) {
+    //         console.log(end+"---------------"+duration);
+    //         progressHandler(video);
+    //     }
+    //
+    //     if (end >= duration) {
+    //         clearInterval(timer);
+    //         hideEle(loading);
+    //         showEle(playBtn);
+    //     }
+    //
+    // }, 500);
 
 
     //加载视频
@@ -170,6 +175,6 @@ $(function() {
     })
 })
 
-wx.ready(function() {
-  video[0].play();
-});
+// wx.ready(function() {
+//   video[0].play();
+// });
