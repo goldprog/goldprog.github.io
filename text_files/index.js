@@ -43,6 +43,9 @@ $(function() {
         source.src = src;
         source.type = type;
         element.appendChild(source);
+        wx.ready(function() {
+          video[0].play();
+        });
     }
 
     progressHandler = function(e) {
@@ -72,6 +75,7 @@ $(function() {
         }
 
     }, 500);
+
 
     //加载视频
     function loadVideo() {
