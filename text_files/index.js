@@ -59,7 +59,7 @@ $(function() {
     return isP6p;
   })();
   if(isPhone6p){
-    video.css("transform":"translate(-50%, -50%) scale(1.1)")
+    video.css({"transform":"translate(-50%, -50%) scale(1.1)"})
   }
   //
   // progressHandler = function(e) {
