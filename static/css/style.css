@@ -279,6 +279,7 @@ html {
   overflow: hidden;
   font-family: "微软雅黑";
   background: #000;
+  position: relative;
 }
 
 body img,
@@ -350,15 +351,20 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: -28px;
 }
 
-.all #play {
-  width: 100px;
-  height: 114px;
+.all .play_wrap {
+  width: 100%;
+  height: 100%;
+  background: url(../images/btnbg.jpg) 0 100%/100% 100% no-repeat;
+}
+
+.all .play_wrap #play {
+  width: 58px;
+  height: 100px;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: -57px -50px 0 0;
   transform: translate(-50%, -50%);
-  background: url(../images/btn.jpg) 0 100%/100% 100% no-repeat;
+  background: url(../images/btn.png) 0 100%/100% 100% no-repeat;
   -webkit-tap-highlight-color: transparent;
   transition: transform .5s ease 0 infinite;
   animation: 1s scale infinite;
@@ -368,7 +374,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scaleY(1.02);
+  transform: translate(-50%, -50%);
   transition: all .5s;
   z-index: -1;
 }
@@ -390,7 +396,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  top: 10%;
+  top: 8.5%;
 }
 
 #content .slogen_wrap > img {
@@ -398,13 +404,40 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
 }
 
-#content .code_wrap {
-  width: 60%;
+#content .refresh {
+  width: 10%;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  top: 40%;
+  top: 37%;
+}
+
+#content .refresh .refresh_ico {
+  width: 100%;
+}
+
+#content .refresh .refresh_ico > img {
+  width: 100%;
+}
+
+#content .refresh .refresh_font {
+  width: 100%;
+  text-align: center;
+}
+
+#content .refresh .refresh_font > img {
+  display: inline-block;
+  width: 90%;
+}
+
+#content .code_wrap {
+  width: 55%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 48%;
   text-align: center;
 }
 
@@ -429,7 +462,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #content .join_btn_wrap {
   position: absolute;
-  bottom: 5.2%;
+  bottom: 6.2%;
   width: 100%;
   text-align: center;
 }

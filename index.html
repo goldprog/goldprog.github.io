@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>龙图游戏2018夏令营</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
-  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="static/css/style.css?0">
   <link rel="stylesheet" type="text/css" href="static/css/animate.min.css">
   <script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
 </head>
@@ -18,12 +18,22 @@
         <p>LOADING...</p>
       </div>
     </div>
-    <div id="play" style="display:none"></div>
+    <div class="play_wrap" style="display:none;">
+      <div id="play"></div>
+    </div>
   </div>
   <video id="video" style="width: 1px; height: 1px;" type="video/mp4" preload="" x5-video-player-type="h5" x5-video-player-fullscreen="true" webkit-playsinline="true" playsinline="true"></video>
   <div id="content">
     <div class="slogen_wrap">
-      <img src="static/images/slogen.png" alt="" class="animated bounceInDown" style="animation-delay: .3s;animation-duration: 1.5s;">
+      <img src="static/images/slogen.png" alt="" class="animated bounceInDown" style="animation-duration: 1.2s;">
+    </div>
+    <div class="refresh" id="refreshBtn">
+      <div class="refresh_ico">
+        <img src="static/images/refresh.png" alt="" class="animated rotateIn" style="animation-duration: 1.2s; animation-delay: 1s;">
+      </div>
+      <div class="refresh_font">
+        <img src="static/images/replay.png" alt="" class="animated fadeIn" style="animation-duration: 1.2s; animation-delay: 1.5s;">
+      </div>
     </div>
     <div class="code_wrap">
       <div class="code animated zoomIn" style="animation-delay: 1.5s;animation-duration: 1s;">
@@ -37,7 +47,7 @@
       <img src="static/images/join.png" alt="" class="animated pulse infinite" style="animation-duration: 2.5s;">
     </div>
   </div>
-  <script src="static/js/index.js"></script>
+  <script src="static/js/index.js?0"></script>
 </body>
 
 </html>
