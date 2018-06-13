@@ -1,4 +1,4 @@
-$(function(){
+(function(){
   var video = $("#video");
   var loading = $("#loading"),
     content = $("#content"),
@@ -135,4 +135,4 @@ $(function(){
       hideEle(video);
       showEle(content);
     })
-})
+})()
