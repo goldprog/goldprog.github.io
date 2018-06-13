@@ -278,8 +278,8 @@ html {
   height: 100%;
   overflow: hidden;
   font-family: "微软雅黑";
-  background: #000;
   position: relative;
+  background: #000;
 }
 
 body img,
@@ -437,7 +437,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  top: 48%;
+  top: 47.5%;
   text-align: center;
 }
 
@@ -467,7 +467,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-#content .join_btn_wrap > img {
+#content .join_btn_wrap img {
   width: 55%;
   height: auto;
   display: inline-block;

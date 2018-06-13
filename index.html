@@ -8,6 +8,9 @@
   <link rel="stylesheet" type="text/css" href="static/css/style.css?0">
   <link rel="stylesheet" type="text/css" href="static/css/animate.min.css">
   <script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('touchmove', function(e){e.preventDefault()}, false);
+  </script>
 </head>
 
 <body style="">
@@ -25,14 +28,14 @@
   <video id="video" style="width: 1px; height: 1px;" type="video/mp4" preload="" x5-video-player-type="h5" x5-video-player-fullscreen="true" webkit-playsinline="true" playsinline="true"></video>
   <div id="content">
     <div class="slogen_wrap">
-      <img src="static/images/slogen.png" alt="" class="animated bounceInDown" style="animation-duration: 1.2s;">
+      <img src="static/images/slogen.png" alt="" class="animated bounceInDown" style="animation-duration: 1.2s; animation-delay: 1s;">
     </div>
     <div class="refresh" id="refreshBtn">
       <div class="refresh_ico">
-        <img src="static/images/refresh.png" alt="" class="animated rotateIn" style="animation-duration: 1.2s; animation-delay: 1s;">
+        <img src="static/images/refresh.png" alt="" class="animated rotateIn" style="animation-duration: 1.2s; animation-delay: 1.3s;">
       </div>
       <div class="refresh_font">
-        <img src="static/images/replay.png" alt="" class="animated fadeIn" style="animation-duration: 1.2s; animation-delay: 1.5s;">
+        <img src="static/images/replay.png" alt="" class="animated fadeIn" style="animation-duration: 1.2s; animation-delay: 1.7s;">
       </div>
     </div>
     <div class="code_wrap">
@@ -40,14 +43,15 @@
         <img src="static/images/code.png" alt="" class="animated shake" style="animation-delay: 2s;animation-duration: 1.2s;">
       </div>
       <div class="font_wrap">
-        <img src="static/images/font.png" alt="" class="animated zoomIn" style="animation-delay: 1.5s;animation-duration: 1.2s;">
+        <img src="static/images/font.png" alt="" class="animated zoomIn" style="animation-delay: 1.7s;animation-duration: 1.2s;">
       </div>
     </div>
-    <div class="join_btn_wrap animated zoomIn" style="animation-delay: 1.7s;animation-duration: 1s;">
-      <img src="static/images/join.png" alt="" class="animated pulse infinite" style="animation-duration: 2.5s;">
+    <div class="join_btn_wrap animated zoomIn" style="animation-delay: 1.9s;animation-duration: 1s;">
+      <a href="#"><img src="static/images/join.png" alt="" class="animated pulse infinite" style="animation-duration: 2.5s;"></a>
     </div>
   </div>
-  <script src="static/js/index.js?0"></script>
+  <script src="static/js/index.js?098"></script>
+
 </body>
 
 </html>
