@@ -1,19 +1,22 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Chicken Music</title><style>.container[data-v-4734a757] {
-  width: 100%;
-  height: 100vh;
-  background: greenyellow;
-}
-
-.container[data-v-b19cf812] {
-  width: 100%;
-  height: 100vh;
-  background: red;
-}
-
-.container[data-v-6cd0b259] {
-  width: 100%;
-  height: 100vh;
-  background: #ccc
-}
-
-/*# sourceMappingURL=skeleton-app.css.map*/</style><link href=/static/css/app.92a54583c2f60a9b1ed750ea934ac3ab.css rel=stylesheet></head><body><div id=app><div data-server-rendered=true><div id=skeleton-investmentfinancehome class=container style=display:none; data-v-b19cf812>第二个</div><div id=skeleton-financesubmenu-more class=container style=display:none; data-v-6cd0b259>第一个</div><div id=skeleton-wallethome class=container style=display:none; data-v-4734a757>第三个</div></div><script>var pathname=window.location.pathname,hash=window.location.hash,skeletons=[{id:"skeleton-investmentfinancehome",el:document.querySelector("#skeleton-investmentfinancehome")},{id:"skeleton-investmentfinancehome",el:document.querySelector("#skeleton-investmentfinancehome")},{id:"skeleton-financesubmenu-more",el:document.querySelector("#skeleton-financesubmenu-more")},{id:"skeleton-wallethome",el:document.querySelector("#skeleton-wallethome")}],isMatched=function(e,n){return"hash"===n?e.test(hash.replace("#","")):"history"===n&&e.test(pathname)},showSkeleton=function(e){for(var n=0;n<skeletons.length;n++){var t=skeletons[n];e===t.id?t.el.style="display:block;":t.el.style="display:none;"}};isMatched(/^(?:\/)?$/i,"history")?showSkeleton("skeleton-investmentfinancehome"):isMatched(/^\/singer(?:\/)?$/i,"history")?showSkeleton("skeleton-investmentfinancehome"):isMatched(/^\/rank(?:\/)?$/i,"history")?showSkeleton("skeleton-financesubmenu-more"):isMatched(/^\/search(?:\/)?$/i,"history")&&showSkeleton("skeleton-wallethome");</script></div><script type=text/javascript src=/static/js/manifest.46acf6372f48d15fb6a6.js></script><script type=text/javascript src=/static/js/vendor.7c1eb3ca314889c7425c.js></script><script type=text/javascript src=/static/js/app.2b33f0e4bf769ba3592a.js></script></body></html>
+Html Webpack Plugin:
+<pre>
+  TypeError: callback is not a function
+  
+  - ommit-css-webpack-plugin.js:13 
+    D:/myworkspace/cms/build/ommit-css-webpack-plu    gin.js:13:7
+  
+  
+  - new Promise
+  
+  
+  - Hook.js:154 AsyncSeriesWaterfallHook.lazyCompi    leHook
+    [cms]/[_tapable@1.1.1@tapable]/lib/Hook.js:154    :20
+  
+  - index.js:673 
+    [cms]/[_html-webpack-plugin@3.2.0@html-webpack    -plugin]/index.js:673:47
+  
+  - index.js:187 Promise.resolve.then.then.then.th    en.then.then.then.result
+    [cms]/[_html-webpack-plugin@3.2.0@html-webpack    -plugin]/index.js:187:18
+  
+  
+</pre>
